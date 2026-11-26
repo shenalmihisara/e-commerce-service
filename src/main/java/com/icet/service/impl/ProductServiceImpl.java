@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
@@ -19,5 +21,10 @@ public class ProductServiceImpl implements ProductService {
     public void addProduct(ProductDto productDto) {
         ProductEntity productEntity = mapper.convertValue(productDto, ProductEntity.class);
         repository.save(productEntity);
+    }
+
+    @Override
+    public List<ProductEntity> getProductById(String category) {
+        return repository.findByCategory(category);
     }
 }
