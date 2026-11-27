@@ -25,4 +25,9 @@ public class ProductController {
     public List<ProductEntity> getProductsByCategory(@PathVariable String category){
         return productService.getProductById(category);
     }
+
+    @GetMapping("/get-ten-product")
+    public List<ProductDto> getTenProducts(){
+        return productService.getTenProducts();
+    }
 }

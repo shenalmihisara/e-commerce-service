@@ -10,4 +10,6 @@ public interface ProductService {
     void addProduct(ProductDto productDto);
 
     List<ProductEntity> getProductById(String category);
+
+    List<ProductDto> getTenProducts();
 }

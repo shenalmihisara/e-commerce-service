@@ -5,6 +5,7 @@ import com.icet.entity.ProductEntity;
 import com.icet.repository.ProductRepository;
 import com.icet.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
 
@@ -26,5 +27,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductEntity> getProductById(String category) {
         return repository.findByCategory(category);
+    }
+
+    @Override
+    public List<ProductDto> getTenProducts() {
+        List<ProductEntity> content = repository.findAll(PageRequest.of(0, 10)).getContent();
+        List<ProductDto> productDto = mapper.convertValue(content, List.class);
+        return productDto;
     }
 }

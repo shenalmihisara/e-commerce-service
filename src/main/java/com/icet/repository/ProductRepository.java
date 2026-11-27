@@ -1,10 +1,10 @@
 package com.icet.repository;
 
 import com.icet.entity.ProductEntity;
-import org.springframework.data.repository.CrudRepository;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
-public interface ProductRepository extends CrudRepository<ProductEntity, Integer> {
+public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
     List<ProductEntity> findByCategory(String category);
+
 }
