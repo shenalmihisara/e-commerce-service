@@ -21,13 +21,18 @@ public class ProductController {
         productService.addProduct(productDto);
     }
 
-    @GetMapping("/category/{category}")
-    public List<ProductEntity> getProductsByCategory(@PathVariable String category){
-        return productService.getProductById(category);
+    @GetMapping("/Get-all-products")
+    public List<ProductEntity> getAllProducts(){
+        return productService.getAllProducts();
     }
 
-    @GetMapping("/get-ten-product")
-    public List<ProductDto> getTenProducts(){
-        return productService.getTenProducts();
+    @GetMapping("/category/{category}")
+    public List<ProductEntity> getProductsByCategory(@PathVariable String category){
+        return productService.getProductByCatogery(category);
+    }
+
+    @GetMapping("/get-product-byId/{id}")
+    public ProductDto getProductById(@PathVariable Integer id){
+        return productService.getProductById(id);
     }
 }

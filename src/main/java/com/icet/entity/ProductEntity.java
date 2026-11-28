@@ -14,6 +14,8 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+
+    @Column(columnDefinition = "TEXT")
     private String description;
     private double price;
     private Integer qty;
@@ -23,7 +25,7 @@ public class ProductEntity {
     private String imgUrl;
     private String sellerName;
     private String location;
-    private boolean isActive;
+    private Boolean isActive;
     private LocalDate createdAt;
     private LocalDate updatedAt;
 

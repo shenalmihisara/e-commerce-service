@@ -9,7 +9,9 @@ public interface ProductService {
 
     void addProduct(ProductDto productDto);
 
-    List<ProductEntity> getProductById(String category);
+    ProductDto getProductById(Integer id);
 
-    List<ProductDto> getTenProducts();
+    List<ProductEntity> getProductByCatogery(String category);
+
+    List<ProductEntity> getAllProducts();
 }

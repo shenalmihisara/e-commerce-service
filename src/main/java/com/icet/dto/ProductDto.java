@@ -20,6 +20,6 @@ public class ProductDto {
     private String imgUrl;
     private String sellerName;
     private String location;
-    private boolean isActive;
+    private Boolean isActive;
 
 }
